@@ -16,6 +16,25 @@ namespace SiguaSportsApp
         {
             InitializeComponent();
         }
+        ClassValidacion validacion = new ClassValidacion();
+
+        bool numero2 = false;
+
+        public void validar()
+        {
+            if (validacion.Espacio_Blanco(ErrorProvider,txtcodigoproducto))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
+                    ErrorProvider.SetError(txtcodigoproducto, "No se puede dejar en blanco");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtcodigoproducto))
+                    ErrorProvider.SetError(txtcodigoproducto, "Solo se permite letras");
+            }
+            else
+            {
+                numero2 = true;
+            }
+        }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -34,7 +53,10 @@ namespace SiguaSportsApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FormInventarioBodega inventario = new FormInventarioBodega();
+            inventario.ShowDialog();
+            this.Close();
         }
 
         private void tpProductos_Click(object sender, EventArgs e)
@@ -90,6 +112,11 @@ namespace SiguaSportsApp
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcodigoproducto_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
