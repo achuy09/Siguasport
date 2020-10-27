@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnRegistro = new System.Windows.Forms.Button();
@@ -74,6 +75,7 @@
             this.lblNombreContacto = new System.Windows.Forms.Label();
             this.txtNombreProveedor = new System.Windows.Forms.TextBox();
             this.lblNombreProveedor = new System.Windows.Forms.Label();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tcRegistro.SuspendLayout();
@@ -81,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tpProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -341,6 +344,7 @@
             this.txtcodigoproducto.Name = "txtcodigoproducto";
             this.txtcodigoproducto.Size = new System.Drawing.Size(168, 22);
             this.txtcodigoproducto.TabIndex = 39;
+            this.txtcodigoproducto.TextChanged += new System.EventHandler(this.txtcodigoproducto_TextChanged);
             // 
             // lblcodigo
             // 
@@ -657,6 +661,10 @@
             this.lblNombreProveedor.TabIndex = 53;
             this.lblNombreProveedor.Text = "Nombre";
             // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // FormRegistroBodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -680,6 +688,7 @@
             this.tpProveedores.ResumeLayout(false);
             this.tpProveedores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -732,5 +741,6 @@
         private System.Windows.Forms.Label lblNombreContacto;
         private System.Windows.Forms.TextBox txtNombreProveedor;
         private System.Windows.Forms.Label lblNombreProveedor;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }
