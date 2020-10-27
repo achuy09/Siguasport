@@ -218,7 +218,7 @@
             // bnt_Buscar
             // 
             this.bnt_Buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bnt_Buscar.Location = new System.Drawing.Point(845, 73);
+            this.bnt_Buscar.Location = new System.Drawing.Point(759, 72);
             this.bnt_Buscar.Name = "bnt_Buscar";
             this.bnt_Buscar.Size = new System.Drawing.Size(75, 23);
             this.bnt_Buscar.TabIndex = 35;
