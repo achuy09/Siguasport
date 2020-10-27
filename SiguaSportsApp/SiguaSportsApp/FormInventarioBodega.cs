@@ -44,7 +44,10 @@ namespace SiguaSportsApp
 
         private void btnAgregarProducto_Click_1(object sender, EventArgs e)
         {
-
+            if(txtBusqueda.Text==" ")
+            {
+                MessageBox.Show("Ingrese un Numero en la casilla de busqueda");
+            }
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
