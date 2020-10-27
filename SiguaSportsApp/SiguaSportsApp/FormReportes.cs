@@ -29,7 +29,7 @@ namespace SiguaSportsApp
 
         private void bnt_Buscar_Click(object sender, EventArgs e)
         {
-
+            // este es una prueba para comprobar si funciona
         }
 
         private void trb_Utilidad_Scroll(object sender, EventArgs e)
