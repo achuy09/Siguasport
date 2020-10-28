@@ -22,6 +22,26 @@ namespace SiguaSportsApp
 
         }
 
+        ClassValidacion validacion = new ClassValidacion();
+        bool numero2 = false;
+
+        public void validar()
+        {
+            if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
+                    ErrorProvider.SetError(txtcodigoproducto, "No se puede dejar en blanco");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtcodigoproducto))
+                    ErrorProvider.SetError(txtcodigoproducto, "Solo se permite letras");
+            }
+            else
+            {
+                numero2 = true;
+            }
+        }
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -98,7 +118,11 @@ namespace SiguaSportsApp
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            dgvventas.Rows.Clear();
+            DialogResult result = MessageBox.Show("Desea cancelar la compra?", "Confirmacion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                dgvventas.Rows.Clear();
+            }
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
@@ -196,7 +220,10 @@ namespace SiguaSportsApp
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            if (numero2)
+            {
+                //agregar dgv datos.
+            }
         }
     }
 }
