@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace SiguaSportsApp
 {
@@ -44,10 +46,27 @@ namespace SiguaSportsApp
 
         private void btnAgregarProducto_Click_1(object sender, EventArgs e)
         {
-            if(txtBusqueda.Text==" ")
+            SqlConnection con = new SqlConnection("Data Source = .; Initial Catalog = SiguaSports; " + "Integrated Security = true");
+            SqlDataAdapter ada = new SqlDataAdapter("select count(*)from Productos where cod_producto= ' " + txtBusqueda.Text + "'", con);
+            DataTable dt = new DataTable();
+            ada.Fill(dt);
+
+            if (txtBusqueda.Text==" ")
             {
                 MessageBox.Show("Ingrese un Numero en la casilla de busqueda");
             }
+           else if (dt.Rows[0][0].ToString() == "1")
+            {
+
+              //MOSTRAR DATOS DEL PRODUCTO
+
+            }
+            else
+
+            MessageBox.Show("Codigo de Producto Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            txtBusqueda.Clear();
+            txtBusqueda.Focus();
+
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
@@ -67,7 +86,8 @@ namespace SiguaSportsApp
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-
+            FormRegistroBodega regisbo = new FormRegistroBodega();
+            regisbo.ShowDialog();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
