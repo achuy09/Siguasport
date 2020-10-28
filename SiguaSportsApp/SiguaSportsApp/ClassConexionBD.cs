@@ -81,7 +81,7 @@ namespace SiguaSportsApp
                 MessageBox.Show("" + e);
                 CerrarConexion();
             }                     
-            
+            //crearx
             return verificacion;
         }
     }
