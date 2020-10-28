@@ -69,25 +69,25 @@ namespace SiguaSportsApp
                     MessageBox.Show("Bienvenido:  " + Nombre + "! Codigo de Puesto " + codigoPuesto, "Login Sunshine Network",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CerrarConexion();
+                    return verificacion;
                 }
                 else
                 {
                     MessageBox.Show("Usuario/Contraseña incorrectos", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     CerrarConexion();
+                    return verificacion;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("" + e);
                 CerrarConexion();
-<<<<<<< HEAD
+                return verificacion;
+
             }
-            
-=======
-            }                     
-            //crearx
->>>>>>> Angel
-            return verificacion;
+
         }
+
     }
 }
+

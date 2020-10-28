@@ -222,7 +222,7 @@ namespace SiguaSportsApp
         {
             if (numero2)
             {
-                //agregar dgv datos.
+                
             }
         }
     }
