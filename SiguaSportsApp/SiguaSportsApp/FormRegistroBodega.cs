@@ -91,5 +91,10 @@ namespace SiguaSportsApp
         {
 
         }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
