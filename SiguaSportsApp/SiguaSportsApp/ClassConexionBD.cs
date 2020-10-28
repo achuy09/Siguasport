@@ -29,7 +29,6 @@ namespace SiguaSportsApp
         {
             sc.ConnectionString = conexion;
         }
-
         public void AbrirConexion()
         {
             try
@@ -69,19 +68,20 @@ namespace SiguaSportsApp
                     verificacion = true;
                     MessageBox.Show("Bienvenido:  " + Nombre + "! Codigo de Puesto " + codigoPuesto, "Login Sunshine Network",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CerrarConexion();
                 }
                 else
                 {
                     MessageBox.Show("Usuario/Contraseña incorrectos", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CerrarConexion();
                 }
             }
             catch(Exception e)
             {
                 MessageBox.Show("" + e);
-            }
+                CerrarConexion();
+            }                     
             
-            
-            CerrarConexion();
             return verificacion;
         }
     }
