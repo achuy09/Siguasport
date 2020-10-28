@@ -117,7 +117,7 @@ namespace SiguaSportsApp
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source = .; Initial Catalog = SiguaSports; " + "Integrated Security = true");
-            SqlDataAdapter ada = new SqlDataAdapter("select count(*)from Productos where cod_producto= ' " + txtcodigoproducto.Text + "'", con);
+            SqlDataAdapter ada = new SqlDataAdapter("select count(*) from Productos where cod_producto= ' " + txtcodigoproducto.Text + "'", con);
             DataTable dt = new DataTable();
             ada.Fill(dt);
 
