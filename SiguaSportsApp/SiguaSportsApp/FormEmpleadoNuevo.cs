@@ -60,7 +60,7 @@ namespace SiguaSportsApp
             if (validacion.Espacio_Blanco(ErrorProvider, txtCorreo) || validacion.Solo_Letras(ErrorProvider, txtCorreo))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtCorreo))
-                    ErrorProvider.SetError(txtCorreo, "no se puede dejar en blanco");
+                    ErrorProvider.SetError(txtCorreo, "No se puede dejar en blanco");
                 else
                 if (validacion.Solo_Letras(ErrorProvider, txtCorreo))
                     ErrorProvider.SetError(txtCorreo, "Solo se permite letras");
@@ -73,7 +73,7 @@ namespace SiguaSportsApp
             if (validacion.Espacio_Blanco(ErrorProvider, mtxtFechaNacimiento))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, mtxtFechaNacimiento))
-                    ErrorProvider.SetError(mtxtFechaNacimiento, "no se puede dejar en blanco");                
+                    ErrorProvider.SetError(mtxtFechaNacimiento, "No se puede dejar en blanco");                
             }
             else
             {
@@ -82,7 +82,7 @@ namespace SiguaSportsApp
             if (validacion.Espacio_Blanco(ErrorProvider, mtxttelefono))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, mtxttelefono))
-                    ErrorProvider.SetError(mtxttelefono, "no se puede dejar en blanco");
+                    ErrorProvider.SetError(mtxttelefono, "No se puede dejar en blanco");
             }
             else
             {
