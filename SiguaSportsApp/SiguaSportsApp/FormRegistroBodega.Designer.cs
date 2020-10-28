@@ -1,4 +1,6 @@
-﻿namespace SiguaSportsApp
+﻿using System;
+
+namespace SiguaSportsApp
 {
     partial class FormRegistroBodega
     {
@@ -672,6 +674,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void txtcodigoproducto_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
