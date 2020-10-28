@@ -33,11 +33,17 @@ namespace SiguaSportsApp
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
-        {            
-            FormConfirmacion conf = new FormConfirmacion();
-            conf.ShowDialog();
-            this.Close();
-        }
+        {
+            if (dgvCambio.CurrentRow is null)
+
+                MessageBox.Show("No hay datos seleccionados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                FormConfirmacion conf = new FormConfirmacion();
+                conf.ShowDialog();
+                this.Close();
+            }
+            }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

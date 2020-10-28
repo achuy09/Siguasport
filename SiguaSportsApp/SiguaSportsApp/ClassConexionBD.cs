@@ -80,8 +80,13 @@ namespace SiguaSportsApp
             {
                 MessageBox.Show("" + e);
                 CerrarConexion();
+<<<<<<< HEAD
             }
             
+=======
+            }                     
+            //crearx
+>>>>>>> Angel
             return verificacion;
         }
     }
