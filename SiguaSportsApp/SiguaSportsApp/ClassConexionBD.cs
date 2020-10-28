@@ -29,7 +29,6 @@ namespace SiguaSportsApp
         {
             sc.ConnectionString = conexion;
         }
-
         public void AbrirConexion()
         {
             try
