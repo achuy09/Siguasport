@@ -30,7 +30,6 @@ namespace SiguaSportsApp
         private void bnt_Buscar_Click(object sender, EventArgs e)
         {
 
-            //este es un comentario
         }
 
         private void trb_Utilidad_Scroll(object sender, EventArgs e)
