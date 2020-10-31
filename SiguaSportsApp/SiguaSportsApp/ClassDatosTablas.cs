@@ -13,40 +13,12 @@ namespace SiguaSportsApp
     class ClassDatosTablas : ClassConexionBD
     {
         ClassEmpleados emp = new ClassEmpleados();
-        public void CargarDatosDevoluciones(DataGridView dvg)
+        public void CargarDatosTablas(DataGridView dvg, string query)
         {
             try
             {
                 AbrirConexion();
-                da = new SqlDataAdapter("SELECT B.nombre[Producto] , A.cantidad[Cantidad] , A.motivo[Motivo] ,C.fecha_devolucion[Fecha de Devolución]" +
-                                         "FROM DevolucionDetalle A " +
-                                         "INNER JOIN Productos B ON A.cod_producto = B.cod_producto" +
-                                         "INNER JOIN Devoluciones C ON A.num_devolucion = C.num_devolucion where cod_estado = 1", sc);
-
-                dt = new DataTable();
-                da.Fill(dt);
-                dvg.DataSource = dt;
-                CerrarConexion();
-            }
-            catch (Exception error)
-            {
-
-                MessageBox.Show("No se pudieron cargar los datos: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        public void CargarDatosCambio(DataGridView dvg)
-        {
-            try
-            {
-                AbrirConexion();
-                da = new SqlDataAdapter("SELECT (CONCAT(nombre, ' ', color, ' ', marca)) Descripcion, " +
-                    "DD.cantidad Cantidad, DD.motivo Motivo, D.fecha_devolucion [Fecha Devolucion] " +
-                    "FROM Devoluciones D inner join DevolucionDetalle DD " +
-                    "on D.num_devolucion = DD.num_devolucion inner join Productos P " +
-                    "on P.cod_producto = DD.cod_producto " +
-                    "where cod_estado = 2", sc);
+                da = new SqlDataAdapter(query, sc);
 
                 dt = new DataTable();
                 da.Fill(dt);
@@ -72,15 +44,77 @@ namespace SiguaSportsApp
             if (flag == 1)
             {
                 MessageBox.Show("La consulta se realizo correctamente. " +
-                    "Se elimino el empleado, permanecera en la tabla empleados historicos.");
+                    "Se elimino el empleado, permanecera en la tabla empleados historicos.", "Empleado Historico", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el empleado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            CerrarConexion();
+        }
+
+        public void AgregarDatos(string codigo, int cantidad)
+        {
+            string mensaje = "";
+
+            sql = string.Format("if exists(Select cod_producto from Productos where cod_producto = @codigo) begin" +
+                "SELECT existencia, cod_producto [Codigo Producto], " +
+                "CONCAT(nombre, ' ', marca, ' ', color) [Descripcion], precioVenta [Precio Unitario], " +
+                "SUM(existencia - (existencia - @cantidad)) Cantidad FROM Productos P where cod_producto = {0} " +
+                "group by existencia, cod_producto, nombre, marca, color, precioVenta" +
+                "end else begin select 'No se encontro el producto.' Mensaje end", codigo);
+            cmd = new SqlCommand(sql, sc);
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            AbrirConexion();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                mensaje = reader["Mensaje"].ToString();
+            }
+            CerrarConexion();
+            if (mensaje == "")
+            {
+                ClassDatosTransaccion datos = new ClassDatosTransaccion();
+                AbrirConexion();
+                if (reader.Read())
+                {
+                    datos.Codigo = reader["Codigo Producto"].ToString();
+                    datos.Descripcion = reader["Descripion"].ToString();
+                    datos.Precio = double.Parse(reader["Precio Unitario"].ToString());
+                    datos.Cantidad = int.Parse(reader["Cantidad"].ToString());
+                }
                 CerrarConexion();
             }
             else
             {
-                MessageBox.Show("No se encontro el empleado.");
-                CerrarConexion();
-            }
+                MessageBox.Show(mensaje, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
 
+        public void ReporteFinanciero(DataGridView dgv, DateTimePicker fecha1, DateTimePicker fecha2)
+        {
+            AbrirConexion();
+            try
+            {                
+                da = new SqlDataAdapter("WITH CALCULO AS(SELECT [Año] = YEAR([fecha_Venta])," +
+                    "[Mes] = MONTH([fecha_Venta]),[Ventas Brutas] = SUM(precioVenta * vd.cantidad)," +
+                    "[Compras Brutas] = SUM(precioCompra * cd.cantidad),[Utilidad Bruta] = SUM(precioVenta * vd.cantidad - precioCompra * cd.cantidad)," +
+                    "[Utilidad del Mes Pasado] = LAG(SUM((precioVenta * vd.cantidad - precioCompra * cd.cantidad))) OVER(ORDER BY Month([fecha_Venta])) FROM Ventas v " +
+                    "inner join VentaDetalle vd on v.num_factura = vd.num_factura inner join CompraDetalle cd  on vd.cod_prducto = cd.cod_producto " +
+                    "where fecha_Venta between '"+fecha1.Value.ToString()+"' and '"+fecha2.Value.ToString()+"' GROUP BY YEAR([fecha_Venta]), MONTH([fecha_Venta])) " +
+                    "SELECT [Año],[Mes],[Ventas Brutas],[Compras Brutas],[Utilidad Bruta],[Utilidad del Mes Pasado]," +
+                    "[Crecimiento Mensual] = 100.0 * ([Utilidad Bruta] - [Ventas del Mes Pasado]) / [Ventas del Mes Pasado] FROM[CALCULO] ORDER BY[Year], [Month] ", sc);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("ERROR " + e, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            CerrarConexion();
+        }
     }
 }

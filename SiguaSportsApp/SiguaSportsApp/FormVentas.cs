@@ -22,6 +22,8 @@ namespace SiguaSportsApp
 
         }
 
+        ClassDatosTablas datosTablas = new ClassDatosTablas();
+        ClassDatosTransaccion datos = new ClassDatosTransaccion();
         ClassValidacion validacion = new ClassValidacion();
         bool numero2 = false;
 
@@ -219,10 +221,17 @@ namespace SiguaSportsApp
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
-        {
+        {            
+            numero2 = false;
+            validar();
             if (numero2)
             {
-                
+                datosTablas.AgregarDatos(txtcodigoproducto.Text, int.Parse(txtcantidad.Text));
+                dgvventas.Rows.Add(datos.Codigo, datos.Descripcion, datos.Precio, datos.Cantidad.ToString());
+            }
+            else
+            {
+
             }
         }
     }

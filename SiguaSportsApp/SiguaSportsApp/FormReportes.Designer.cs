@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnexit = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvReporteFinanciero = new System.Windows.Forms.DataGridView();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VentasBrutas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,15 +44,15 @@
             this.trb_Utilidad = new System.Windows.Forms.TrackBar();
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.bnt_Buscar = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporteFinanciero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trb_Utilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -62,9 +62,10 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 36);
+            this.panel3.Location = new System.Drawing.Point(0, 44);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 20);
+            this.panel3.Size = new System.Drawing.Size(1387, 24);
             this.panel3.TabIndex = 26;
             // 
             // panel1
@@ -75,8 +76,9 @@
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 36);
+            this.panel1.Size = new System.Drawing.Size(1387, 44);
             this.panel1.TabIndex = 25;
             // 
             // btnexit
@@ -85,9 +87,10 @@
             this.btnexit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnexit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnexit.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexit.Location = new System.Drawing.Point(1001, 0);
+            this.btnexit.Location = new System.Drawing.Point(1336, 0);
+            this.btnexit.Margin = new System.Windows.Forms.Padding(4);
             this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(37, 34);
+            this.btnexit.Size = new System.Drawing.Size(49, 42);
             this.btnexit.TabIndex = 5;
             this.btnexit.Text = "X";
             this.btnexit.UseVisualStyleBackColor = true;
@@ -97,21 +100,22 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(3, 2);
+            this.lblTitulo.Location = new System.Drawing.Point(4, 2);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(176, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(226, 33);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Reporte Financiero";
             // 
-            // dataGridView1
+            // dgvReporteFinanciero
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvReporteFinanciero.AllowUserToAddRows = false;
+            this.dgvReporteFinanciero.AllowUserToDeleteRows = false;
+            this.dgvReporteFinanciero.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvReporteFinanciero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReporteFinanciero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Fecha,
             this.Mes,
             this.VentasBrutas,
@@ -119,13 +123,15 @@
             this.Utilidad_Bruta,
             this.Crecimiento,
             this.Porcentaje_Frente_Meses_Anteriores});
-            this.dataGridView1.Location = new System.Drawing.Point(8, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1124, 367);
-            this.dataGridView1.TabIndex = 39;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvReporteFinanciero.Location = new System.Drawing.Point(11, 178);
+            this.dgvReporteFinanciero.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvReporteFinanciero.Name = "dgvReporteFinanciero";
+            this.dgvReporteFinanciero.ReadOnly = true;
+            this.dgvReporteFinanciero.RowHeadersVisible = false;
+            this.dgvReporteFinanciero.RowHeadersWidth = 51;
+            this.dgvReporteFinanciero.Size = new System.Drawing.Size(1363, 452);
+            this.dgvReporteFinanciero.TabIndex = 39;
+            this.dgvReporteFinanciero.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Fecha
             // 
@@ -187,19 +193,21 @@
             // 
             this.lbl_Valor_Utilidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_Valor_Utilidad.AutoSize = true;
-            this.lbl_Valor_Utilidad.Location = new System.Drawing.Point(414, 116);
+            this.lbl_Valor_Utilidad.Location = new System.Drawing.Point(552, 143);
+            this.lbl_Valor_Utilidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Valor_Utilidad.Name = "lbl_Valor_Utilidad";
-            this.lbl_Valor_Utilidad.Size = new System.Drawing.Size(69, 13);
+            this.lbl_Valor_Utilidad.Size = new System.Drawing.Size(92, 17);
             this.lbl_Valor_Utilidad.TabIndex = 38;
             this.lbl_Valor_Utilidad.Text = "Valor Utilidad";
             // 
             // trb_Utilidad
             // 
             this.trb_Utilidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.trb_Utilidad.Location = new System.Drawing.Point(393, 81);
+            this.trb_Utilidad.Location = new System.Drawing.Point(524, 100);
+            this.trb_Utilidad.Margin = new System.Windows.Forms.Padding(4);
             this.trb_Utilidad.Maximum = 10000;
             this.trb_Utilidad.Name = "trb_Utilidad";
-            this.trb_Utilidad.Size = new System.Drawing.Size(325, 45);
+            this.trb_Utilidad.Size = new System.Drawing.Size(433, 56);
             this.trb_Utilidad.TabIndex = 37;
             this.trb_Utilidad.TickFrequency = 500;
             this.trb_Utilidad.Scroll += new System.EventHandler(this.trb_Utilidad_Scroll);
@@ -207,49 +215,53 @@
             // btn_Limpiar
             // 
             this.btn_Limpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_Limpiar.Location = new System.Drawing.Point(759, 106);
+            this.btn_Limpiar.Location = new System.Drawing.Point(1012, 130);
+            this.btn_Limpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Limpiar.Size = new System.Drawing.Size(100, 28);
             this.btn_Limpiar.TabIndex = 36;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // bnt_Buscar
             // 
             this.bnt_Buscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bnt_Buscar.Location = new System.Drawing.Point(759, 72);
+            this.bnt_Buscar.Location = new System.Drawing.Point(1012, 89);
+            this.bnt_Buscar.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_Buscar.Name = "bnt_Buscar";
-            this.bnt_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.bnt_Buscar.Size = new System.Drawing.Size(100, 28);
             this.bnt_Buscar.TabIndex = 35;
             this.bnt_Buscar.Text = "Buscar";
             this.bnt_Buscar.UseVisualStyleBackColor = true;
             this.bnt_Buscar.Click += new System.EventHandler(this.bnt_Buscar_Click);
             // 
-            // dateTimePicker2
+            // dtpFecha2
             // 
-            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker2.Location = new System.Drawing.Point(202, 107);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker2.TabIndex = 32;
+            this.dtpFecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpFecha2.Location = new System.Drawing.Point(269, 132);
+            this.dtpFecha2.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.Size = new System.Drawing.Size(171, 22);
+            this.dtpFecha2.TabIndex = 32;
             // 
-            // dateTimePicker1
+            // dtpFecha1
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Location = new System.Drawing.Point(202, 73);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker1.TabIndex = 31;
+            this.dtpFecha1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpFecha1.Location = new System.Drawing.Point(269, 90);
+            this.dtpFecha1.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(171, 22);
+            this.dtpFecha1.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(119, 105);
+            this.label2.Location = new System.Drawing.Point(159, 129);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 22);
+            this.label2.Size = new System.Drawing.Size(75, 26);
             this.label2.TabIndex = 30;
             this.label2.Text = "Hasta:";
             // 
@@ -258,18 +270,20 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 72);
+            this.label1.Location = new System.Drawing.Point(160, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 22);
+            this.label1.Size = new System.Drawing.Size(81, 26);
             this.label1.TabIndex = 29;
             this.label1.Text = "Desde:";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.Location = new System.Drawing.Point(333, 100);
+            this.pictureBox3.Location = new System.Drawing.Point(444, 123);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.Size = new System.Drawing.Size(40, 37);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
@@ -277,9 +291,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.Location = new System.Drawing.Point(333, 66);
+            this.pictureBox2.Location = new System.Drawing.Point(444, 81);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.Size = new System.Drawing.Size(40, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
@@ -287,9 +302,10 @@
             // btnRegresar
             // 
             this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegresar.Location = new System.Drawing.Point(1057, 531);
+            this.btnRegresar.Location = new System.Drawing.Point(1409, 654);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegresar.Size = new System.Drawing.Size(100, 28);
             this.btnRegresar.TabIndex = 40;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = true;
@@ -297,32 +313,32 @@
             // 
             // FormReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 565);
+            this.ClientSize = new System.Drawing.Size(1387, 695);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvReporteFinanciero);
             this.Controls.Add(this.lbl_Valor_Utilidad);
             this.Controls.Add(this.trb_Utilidad);
             this.Controls.Add(this.btn_Limpiar);
             this.Controls.Add(this.bnt_Buscar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha2);
+            this.Controls.Add(this.dtpFecha1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormReportes";
             this.Text = "FormReportes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormReportes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReporteFinanciero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trb_Utilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -337,15 +353,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvReporteFinanciero;
         private System.Windows.Forms.Label lbl_Valor_Utilidad;
         private System.Windows.Forms.TrackBar trb_Utilidad;
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.Button bnt_Buscar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha2;
+        private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

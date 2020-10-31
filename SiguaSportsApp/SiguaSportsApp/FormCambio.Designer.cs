@@ -30,25 +30,25 @@
         {
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.txttotal = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtDevolucion = new System.Windows.Forms.TextBox();
             this.lbldevolucion = new System.Windows.Forms.Label();
             this.lblMotivo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label_ID = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblfecha = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtvendedor = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtDes = new System.Windows.Forms.TextBox();
+            this.lblDes = new System.Windows.Forms.Label();
+            this.lblSub = new System.Windows.Forms.Label();
+            this.txtSub = new System.Windows.Forms.TextBox();
+            this.txtISV = new System.Windows.Forms.TextBox();
+            this.lblISV = new System.Windows.Forms.Label();
             this.btnexit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,6 +61,8 @@
             this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columna_descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodProd = new System.Windows.Forms.TextBox();
+            this.lblCodProd = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -70,7 +72,7 @@
             // txtMotivo
             // 
             this.txtMotivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtMotivo.Location = new System.Drawing.Point(168, 230);
+            this.txtMotivo.Location = new System.Drawing.Point(588, 187);
             this.txtMotivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(467, 22);
@@ -93,29 +95,29 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // lbltotal
+            // lblTotal
             // 
-            this.lbltotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(1051, 114);
-            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(54, 24);
-            this.lbltotal.TabIndex = 3;
-            this.lbltotal.Text = "Total";
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(1051, 114);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(54, 24);
+            this.lblTotal.TabIndex = 3;
+            this.lblTotal.Text = "Total";
             // 
-            // txttotal
+            // txtTotal
             // 
-            this.txttotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txttotal.Enabled = false;
-            this.txttotal.Location = new System.Drawing.Point(1135, 116);
-            this.txttotal.Margin = new System.Windows.Forms.Padding(4);
-            this.txttotal.Name = "txttotal";
-            this.txttotal.ReadOnly = true;
-            this.txttotal.Size = new System.Drawing.Size(132, 22);
-            this.txttotal.TabIndex = 2;
-            this.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(1135, 116);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(132, 22);
+            this.txtTotal.TabIndex = 2;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDevolucion
             // 
@@ -148,34 +150,35 @@
             this.lblMotivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblMotivo.AutoSize = true;
             this.lblMotivo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMotivo.Location = new System.Drawing.Point(72, 228);
+            this.lblMotivo.Location = new System.Drawing.Point(439, 185);
             this.lblMotivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMotivo.Name = "lblMotivo";
             this.lblMotivo.Size = new System.Drawing.Size(65, 24);
             this.lblMotivo.TabIndex = 61;
             this.lblMotivo.Text = "Motivo";
             // 
-            // label4
+            // lblID
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 140);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 24);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Id Vendedor";
+            this.lblID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(48, 140);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(112, 24);
+            this.lblID.TabIndex = 54;
+            this.lblID.Text = "Id Vendedor";
             // 
-            // label_ID
+            // txtID
             // 
-            this.label_ID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label_ID.Location = new System.Drawing.Point(168, 142);
-            this.label_ID.Margin = new System.Windows.Forms.Padding(4);
-            this.label_ID.Name = "label_ID";
-            this.label_ID.ReadOnly = true;
-            this.label_ID.Size = new System.Drawing.Size(233, 22);
-            this.label_ID.TabIndex = 55;
+            this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtID.Location = new System.Drawing.Point(168, 142);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(233, 22);
+            this.txtID.TabIndex = 55;
+            this.txtID.TextChanged += new System.EventHandler(this.label_ID_TextChanged);
             // 
             // panel2
             // 
@@ -245,14 +248,14 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.btnConfirmar);
             this.panel4.Controls.Add(this.btnCancelar);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.lbltotal);
-            this.panel4.Controls.Add(this.txttotal);
+            this.panel4.Controls.Add(this.txtDes);
+            this.panel4.Controls.Add(this.lblDes);
+            this.panel4.Controls.Add(this.lblSub);
+            this.panel4.Controls.Add(this.txtSub);
+            this.panel4.Controls.Add(this.txtISV);
+            this.panel4.Controls.Add(this.lblISV);
+            this.panel4.Controls.Add(this.lblTotal);
+            this.panel4.Controls.Add(this.txtTotal);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 529);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -261,77 +264,77 @@
             this.panel4.TabIndex = 59;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
-            // textBox3
+            // txtDes
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(1135, 49);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtDes.Enabled = false;
+            this.txtDes.Location = new System.Drawing.Point(1135, 49);
+            this.txtDes.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDes.Name = "txtDes";
+            this.txtDes.ReadOnly = true;
+            this.txtDes.Size = new System.Drawing.Size(132, 22);
+            this.txtDes.TabIndex = 10;
+            this.txtDes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label3
+            // lblDes
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1010, 47);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 24);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Descuento";
+            this.lblDes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDes.AutoSize = true;
+            this.lblDes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDes.Location = new System.Drawing.Point(1010, 47);
+            this.lblDes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDes.Name = "lblDes";
+            this.lblDes.Size = new System.Drawing.Size(95, 24);
+            this.lblDes.TabIndex = 9;
+            this.lblDes.Text = "Descuento";
             // 
-            // label2
+            // lblSub
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1024, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Subtotal";
+            this.lblSub.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSub.AutoSize = true;
+            this.lblSub.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub.Location = new System.Drawing.Point(1024, 17);
+            this.lblSub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSub.Name = "lblSub";
+            this.lblSub.Size = new System.Drawing.Size(81, 24);
+            this.lblSub.TabIndex = 8;
+            this.lblSub.Text = "Subtotal";
             // 
-            // textBox2
+            // txtSub
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(1135, 19);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSub.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtSub.Enabled = false;
+            this.txtSub.Location = new System.Drawing.Point(1135, 19);
+            this.txtSub.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSub.Name = "txtSub";
+            this.txtSub.ReadOnly = true;
+            this.txtSub.Size = new System.Drawing.Size(132, 22);
+            this.txtSub.TabIndex = 7;
+            this.txtSub.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // txtISV
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(1135, 80);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtISV.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtISV.Enabled = false;
+            this.txtISV.Location = new System.Drawing.Point(1135, 80);
+            this.txtISV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtISV.Name = "txtISV";
+            this.txtISV.ReadOnly = true;
+            this.txtISV.Size = new System.Drawing.Size(132, 22);
+            this.txtISV.TabIndex = 6;
+            this.txtISV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label1
+            // lblISV
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1063, 80);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "ISV";
+            this.lblISV.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblISV.AutoSize = true;
+            this.lblISV.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblISV.Location = new System.Drawing.Point(1063, 80);
+            this.lblISV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblISV.Name = "lblISV";
+            this.lblISV.Size = new System.Drawing.Size(42, 24);
+            this.lblISV.TabIndex = 5;
+            this.lblISV.Text = "ISV";
             // 
             // btnexit
             // 
@@ -466,16 +469,39 @@
             this.ProductoCambio.ReadOnly = true;
             this.ProductoCambio.Width = 280;
             // 
+            // txtCodProd
+            // 
+            this.txtCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtCodProd.Location = new System.Drawing.Point(588, 144);
+            this.txtCodProd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodProd.Name = "txtCodProd";
+            this.txtCodProd.Size = new System.Drawing.Size(164, 22);
+            this.txtCodProd.TabIndex = 66;
+            // 
+            // lblCodProd
+            // 
+            this.lblCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblCodProd.AutoSize = true;
+            this.lblCodProd.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodProd.Location = new System.Drawing.Point(439, 142);
+            this.lblCodProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodProd.Name = "lblCodProd";
+            this.lblCodProd.Size = new System.Drawing.Size(141, 24);
+            this.lblCodProd.TabIndex = 65;
+            this.lblCodProd.Text = "Codigo Producto";
+            // 
             // FormCambio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1531, 684);
+            this.Controls.Add(this.txtCodProd);
+            this.Controls.Add(this.lblCodProd);
             this.Controls.Add(this.dgvCambio);
             this.Controls.Add(this.txtMotivo);
             this.Controls.Add(this.lblMotivo);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label_ID);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtvendedor);
             this.Controls.Add(this.panel4);
@@ -502,13 +528,13 @@
 
         private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.TextBox txttotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtDevolucion;
         private System.Windows.Forms.Label lbldevolucion;
         private System.Windows.Forms.Label lblMotivo;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox label_ID;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblfecha;
@@ -521,17 +547,19 @@
         private System.Windows.Forms.Label lblventas;
         private System.Windows.Forms.Label lblvendedor;
         private System.Windows.Forms.DataGridView dgvCambio;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDes;
+        private System.Windows.Forms.Label lblDes;
+        private System.Windows.Forms.Label lblSub;
+        private System.Windows.Forms.TextBox txtSub;
+        private System.Windows.Forms.TextBox txtISV;
+        private System.Windows.Forms.Label lblISV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columna_descripcionProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductoCambio;
+        private System.Windows.Forms.TextBox txtCodProd;
+        private System.Windows.Forms.Label lblCodProd;
     }
 }

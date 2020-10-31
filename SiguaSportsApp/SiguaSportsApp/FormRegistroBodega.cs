@@ -17,24 +17,141 @@ namespace SiguaSportsApp
         {
             InitializeComponent();
         }
+        private void FormRegistroBodega_Load(object sender, EventArgs e)
+        {
+            string query = "SELECT cod_producto Codigo, CONCAT(p.nombre, ' ', precioVenta, ' ', precioCompra, ' ', color,  ' ', marca) Descripcion, " +
+                "c.descripcion Categoria, pr.nombre Proveedor FROM Productos p inner join Proveedores pr on p.cod_proveedor = pr.cod_proveedor " +
+                "inner join Categorias c on p.cod_categoria = c.cod_categoria";
+            string query1 = "Select cod_proveedor Codigo, nombre Nombre, direccion Direccion, telefono Telefono, correo Correo, " +
+                "nombre_contacto [Nombre Contacto], telefono_contacto [Telefono Contacto] from Proveedores";
+            datos.CargarDatosTablas(dgvProductos, query);
+            datos.CargarDatosTablas(dgvProveedores, query1);
+        }
+        ClassDatosTablas datos = new ClassDatosTablas();
         ClassValidacion validacion = new ClassValidacion();
+        ClassConexionBD con = new ClassConexionBD();
 
+        bool letra1 = false;
+        bool letra2 = false;
+        bool letra3 = false;
+        bool letra4 = false;
+        bool letra5 = false;
         bool numero2 = false;
+        bool numero1 = false;
+        bool numero3 = false;
+        bool numero4 = false;
+        bool numero5 = false;
 
         public void validar()
         {
+            if (validacion.Espacio_Blanco(ErrorProvider, txtProveedorProd))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtProveedorProd))
+                    ErrorProvider.SetError(txtProveedorProd, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtProveedorProd))
+                    ErrorProvider.SetError(txtProveedorProd, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra1 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtcantidad))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtcantidad))
+                    ErrorProvider.SetError(txtcantidad, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtcantidad))
+                    ErrorProvider.SetError(txtcantidad, "Solo se permiten numeros.");
+            }
+            else
+            {
+                numero1 = true;
+            }
+
             if (validacion.Espacio_Blanco(ErrorProvider,txtcodigoproducto))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
-                    ErrorProvider.SetError(txtcodigoproducto, "No se puede dejar en blanco");
+                    ErrorProvider.SetError(txtcodigoproducto, "No se puede dejar en blanco.");
                 else
                 if (validacion.Solo_Numeros(ErrorProvider, txtcodigoproducto))
-                    ErrorProvider.SetError(txtcodigoproducto, "Solo se permite letras");
+                    ErrorProvider.SetError(txtcodigoproducto, "Solo se permite numeros.");
             }
             else
             {
                 numero2 = true;
             }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtFacturaCompra))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtFacturaCompra))
+                    ErrorProvider.SetError(txtFacturaCompra, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtFacturaCompra))
+                    ErrorProvider.SetError(txtFacturaCompra, "Solo se permiten numeros.");
+            }
+            else
+            {
+                numero3 = true;
+            }
+        }
+
+        public void validar2()
+        {
+            if (validacion.Espacio_Blanco(ErrorProvider, txtnombre))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtnombre))
+                    ErrorProvider.SetError(txtnombre, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtnombre))
+                    ErrorProvider.SetError(txtnombre, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra2 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtmarca))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtmarca))
+                    ErrorProvider.SetError(txtmarca, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtmarca))
+                    ErrorProvider.SetError(txtmarca, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra3 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtColor))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtColor))
+                    ErrorProvider.SetError(txtColor, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtColor))
+                    ErrorProvider.SetError(txtColor, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra4 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtEstado))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtEstado))
+                    ErrorProvider.SetError(txtEstado, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtEstado))
+                    ErrorProvider.SetError(txtEstado, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra5 = true;
+            }
+
+
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -42,26 +159,12 @@ namespace SiguaSportsApp
             Application.Exit();
         }
 
-        private void FormRegistroBodega_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormInventarioBodega InvBo = new FormInventarioBodega();
             InvBo.ShowDialog();
-        }
-
-        private void tpProductos_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void lbldescripcion_Click(object sender, EventArgs e)
@@ -70,16 +173,6 @@ namespace SiguaSportsApp
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
         {
 
         }
@@ -116,56 +209,45 @@ namespace SiguaSportsApp
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source = .; Initial Catalog = SiguaSports; " + "Integrated Security = true");
-            SqlDataAdapter ada = new SqlDataAdapter("select count(*) from Productos where cod_producto= ' " + txtcodigoproducto.Text + "'", con);
-            DataTable dt = new DataTable();
-            ada.Fill(dt);
+            con.AbrirConexion();
+            con.da = new SqlDataAdapter("select count(*) from Productos where cod_producto = '" + txtcodigoproducto.Text.ToString() + "'", con.sc);
+            con.dt = new DataTable();
+            con.da.Fill(con.dt);
 
-            if (txtcodigoproducto.Text=="")
+            if (letra1)
             {
-                MessageBox.Show("Ingrese un codigo de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(txtnombre.Text=="")
-            {
-                MessageBox.Show("Ingrese un nombre de producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(txtmarca.Text=="")
-            {
-                MessageBox.Show("Ingrese la marca del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtColor.Text=="")
-            {
-                MessageBox.Show("Ingrese un color del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtEstado.Text=="")
-            {
-                MessageBox.Show("Ingrese el estado del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtcantidad.Text=="")
-            {
-                MessageBox.Show("Ingrese la cantidad de productos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtprecio.Text=="")
-            {
-                MessageBox.Show("Ingrese el precio del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtPrecioVenta.Text == "")
-            {
-                MessageBox.Show("Ingrese el precio a venta del producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (dt.Rows[0][0].ToString() == "1")
-            {
-                MessageBox.Show("Ingrese un codigo de producto", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                validar();
+                if(letra1 && numero1 && numero2 && numero3)
+                {
+                    //imprimr txt y cambiar existencia
+                }
+                else
+                {
+
+                }
             }
             else
             {
+                validar();
+                validar2();
                 //ingresar producto a base
             }
+            con.CerrarConexion();
         }
 
         private void btnCancelarProducto_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ya se encuentra en la ventana.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

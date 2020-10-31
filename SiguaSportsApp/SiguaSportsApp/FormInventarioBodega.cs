@@ -18,26 +18,15 @@ namespace SiguaSportsApp
         {
             InitializeComponent();
         }
-
-        private void btnCancelarProducto_Click(object sender, EventArgs e)
+        private void FormInventarioBodega_Load(object sender, EventArgs e)
         {
-
+            string query = "SELECT cod_producto Codigo, CONCAT(p.nombre, ' ', precioVenta, ' ', precioCompra, ' ', color,  ' ', marca) Descripcion, " +
+                "c.descripcion Categoria, pr.nombre Proveedor FROM Productos p inner join Proveedores pr on p.cod_proveedor = pr.cod_proveedor " +
+                "inner join Categorias c on p.cod_categoria = c.cod_categoria";
+            datos.CargarDatosTablas(dgvProductos, query);
         }
-
-        private void tpProductos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
+        ClassDatosTablas datos = new ClassDatosTablas();
+        ClassConexionBD con = new ClassConexionBD();
 
         private void dgvProductos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -46,27 +35,22 @@ namespace SiguaSportsApp
 
         private void btnAgregarProducto_Click_1(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source = .; Initial Catalog = SiguaSports; " + "Integrated Security = true");
-            SqlDataAdapter ada = new SqlDataAdapter("select count(*)from Productos where cod_producto= ' " + txtBusqueda.Text + "'", con);
-            DataTable dt = new DataTable();
-            ada.Fill(dt);
+            con.AbrirConexion();
+            con.da = new SqlDataAdapter("select count(*)from Productos where cod_producto = '" + txtBuscar.Text + "'", con.sc);
+            con.dt = new DataTable();
+            con.da.Fill(con.dt);
 
-            if (txtBusqueda.Text==" ")
+            if (con.dt.Rows[0][0].ToString() == "1")
             {
-                MessageBox.Show("Ingrese un Numero en la casilla de busqueda");
-            }
-           else if (dt.Rows[0][0].ToString() == "1")
-            {
-
-              //MOSTRAR DATOS DEL PRODUCTO
-
+                //MOSTRAR DATOS DEL PRODUCTO
             }
             else
-
-            MessageBox.Show("Codigo de Producto Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            txtBusqueda.Clear();
-            txtBusqueda.Focus();
-
+            {
+                MessageBox.Show("Codigo de Producto Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBuscar.Clear();
+                txtBuscar.Focus();
+            }
+            con.CerrarConexion();
         }
 
         private void txtprecio_TextChanged(object sender, EventArgs e)
@@ -75,11 +59,6 @@ namespace SiguaSportsApp
         }
 
         private void lblprecioCompra_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormInventarioBodega_Load(object sender, EventArgs e)
         {
 
         }

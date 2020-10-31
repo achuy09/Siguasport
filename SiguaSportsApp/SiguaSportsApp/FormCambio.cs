@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace SiguaSportsApp
         {
             InitializeComponent();
         }
+
+        ClassConexionBD con = new ClassConexionBD();
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -34,16 +37,28 @@ namespace SiguaSportsApp
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (dgvCambio.CurrentRow is null)
+            if (dgvCambio.Rows.Count == 0)
 
                 MessageBox.Show("No hay datos seleccionados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                FormConfirmacion conf = new FormConfirmacion();
-                conf.ShowDialog();
-                this.Close();
+                con.AbrirConexion();
+                con.da = new SqlDataAdapter("select count(*)from Productos where cod_producto= ' " + txtCodProd.Text.ToString() + "'", con.sc);
+                con.dt = new DataTable();
+                con.da.Fill(con.dt);
+
+                if (dgvCambio.Rows.Count == 0)
+                {
+                    MessageBox.Show("No existe el producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    FormConfirmacion conf = new FormConfirmacion();
+                    conf.ShowDialog();
+                    this.Close();
+                }
             }
-            }
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -54,6 +69,11 @@ namespace SiguaSportsApp
         }
 
         private void txtDevolucion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_ID_TextChanged(object sender, EventArgs e)
         {
 
         }

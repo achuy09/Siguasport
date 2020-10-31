@@ -22,11 +22,6 @@ namespace SiguaSportsApp
 
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void bnt_Buscar_Click(object sender, EventArgs e)
         {
 

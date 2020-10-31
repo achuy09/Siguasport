@@ -73,6 +73,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtCodProd = new System.Windows.Forms.TextBox();
+            this.lblCodProd = new System.Windows.Forms.Label();
             this.tcDevoluciones.SuspendLayout();
             this.tpDevoluciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).BeginInit();
@@ -98,6 +100,8 @@
             // 
             // tpDevoluciones
             // 
+            this.tpDevoluciones.Controls.Add(this.txtCodProd);
+            this.tpDevoluciones.Controls.Add(this.lblCodProd);
             this.tpDevoluciones.Controls.Add(this.txtMotivo);
             this.tpDevoluciones.Controls.Add(this.label4);
             this.tpDevoluciones.Controls.Add(this.label_ID);
@@ -120,7 +124,7 @@
             // txtMotivo
             // 
             this.txtMotivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtMotivo.Location = new System.Drawing.Point(168, 230);
+            this.txtMotivo.Location = new System.Drawing.Point(596, 187);
             this.txtMotivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.Size = new System.Drawing.Size(467, 22);
@@ -292,7 +296,7 @@
             this.lblMotivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblMotivo.AutoSize = true;
             this.lblMotivo.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMotivo.Location = new System.Drawing.Point(72, 228);
+            this.lblMotivo.Location = new System.Drawing.Point(447, 185);
             this.lblMotivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMotivo.Name = "lblMotivo";
             this.lblMotivo.Size = new System.Drawing.Size(65, 24);
@@ -377,6 +381,7 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
@@ -393,6 +398,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lbltotalDevolucion
             // 
@@ -631,6 +637,27 @@
             this.panel8.Size = new System.Drawing.Size(1506, 62);
             this.panel8.TabIndex = 59;
             // 
+            // txtCodProd
+            // 
+            this.txtCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtCodProd.Location = new System.Drawing.Point(596, 144);
+            this.txtCodProd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodProd.Name = "txtCodProd";
+            this.txtCodProd.Size = new System.Drawing.Size(164, 22);
+            this.txtCodProd.TabIndex = 68;
+            // 
+            // lblCodProd
+            // 
+            this.lblCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblCodProd.AutoSize = true;
+            this.lblCodProd.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodProd.Location = new System.Drawing.Point(447, 142);
+            this.lblCodProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodProd.Name = "lblCodProd";
+            this.lblCodProd.Size = new System.Drawing.Size(141, 24);
+            this.lblCodProd.TabIndex = 67;
+            this.lblCodProd.Text = "Codigo Producto";
+            // 
             // FormDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -709,5 +736,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lbltotalDevolucion;
         private System.Windows.Forms.TextBox txttotal;
+        private System.Windows.Forms.TextBox txtCodProd;
+        private System.Windows.Forms.Label lblCodProd;
     }
 }

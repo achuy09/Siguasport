@@ -14,11 +14,11 @@ namespace SiguaSportsApp
     {
         public SqlConnection sc = new SqlConnection();
 
-        protected SqlDataAdapter da;
-        protected DataTable dt;
+        public SqlDataAdapter da;
+        public DataTable dt;
 
-        protected string sql;
-        protected SqlCommand cmd;
+        public string sql;
+        public SqlCommand cmd;
         private int codigoPuesto;
 
         string conexion = "Data Source = .; Initial Catalog = SiguaSports; " + "Integrated Security = true";
@@ -68,24 +68,18 @@ namespace SiguaSportsApp
                     verificacion = true;
                     MessageBox.Show("Bienvenido:  " + Nombre + "! Codigo de Puesto " + codigoPuesto, "Login Sunshine Network",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CerrarConexion();
-                    return verificacion;
                 }
                 else
                 {
                     MessageBox.Show("Usuario/Contraseña incorrectos", "Ingreso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    CerrarConexion();
-                    return verificacion;
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("" + e);
-                CerrarConexion();
-                return verificacion;
-
             }
-
+            CerrarConexion();
+            return verificacion;
         }
 
     }
