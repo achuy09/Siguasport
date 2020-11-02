@@ -30,6 +30,8 @@
         {
             this.tcDevoluciones = new System.Windows.Forms.TabControl();
             this.tpDevoluciones = new System.Windows.Forms.TabPage();
+            this.txtCodProd = new System.Windows.Forms.TextBox();
+            this.lblCodProd = new System.Windows.Forms.Label();
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label_ID = new System.Windows.Forms.TextBox();
@@ -73,8 +75,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.txtCodProd = new System.Windows.Forms.TextBox();
-            this.lblCodProd = new System.Windows.Forms.Label();
             this.tcDevoluciones.SuspendLayout();
             this.tpDevoluciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).BeginInit();
@@ -120,6 +120,27 @@
             this.tpDevoluciones.TabIndex = 0;
             this.tpDevoluciones.Text = "Devoluciones";
             this.tpDevoluciones.UseVisualStyleBackColor = true;
+            // 
+            // txtCodProd
+            // 
+            this.txtCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtCodProd.Location = new System.Drawing.Point(596, 144);
+            this.txtCodProd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodProd.Name = "txtCodProd";
+            this.txtCodProd.Size = new System.Drawing.Size(164, 22);
+            this.txtCodProd.TabIndex = 68;
+            // 
+            // lblCodProd
+            // 
+            this.lblCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblCodProd.AutoSize = true;
+            this.lblCodProd.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodProd.Location = new System.Drawing.Point(447, 142);
+            this.lblCodProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodProd.Name = "lblCodProd";
+            this.lblCodProd.Size = new System.Drawing.Size(141, 24);
+            this.lblCodProd.TabIndex = 67;
+            this.lblCodProd.Text = "Codigo Producto";
             // 
             // txtMotivo
             // 
@@ -339,6 +360,7 @@
             this.btnexit.TabIndex = 5;
             this.btnexit.Text = "X";
             this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // lblventas
             // 
@@ -636,27 +658,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1506, 62);
             this.panel8.TabIndex = 59;
-            // 
-            // txtCodProd
-            // 
-            this.txtCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtCodProd.Location = new System.Drawing.Point(596, 144);
-            this.txtCodProd.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodProd.Name = "txtCodProd";
-            this.txtCodProd.Size = new System.Drawing.Size(164, 22);
-            this.txtCodProd.TabIndex = 68;
-            // 
-            // lblCodProd
-            // 
-            this.lblCodProd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblCodProd.AutoSize = true;
-            this.lblCodProd.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodProd.Location = new System.Drawing.Point(447, 142);
-            this.lblCodProd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodProd.Name = "lblCodProd";
-            this.lblCodProd.Size = new System.Drawing.Size(141, 24);
-            this.lblCodProd.TabIndex = 67;
-            this.lblCodProd.Text = "Codigo Producto";
             // 
             // FormDevoluciones
             // 

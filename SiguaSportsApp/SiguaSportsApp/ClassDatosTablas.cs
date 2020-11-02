@@ -19,18 +19,15 @@ namespace SiguaSportsApp
             {
                 AbrirConexion();
                 da = new SqlDataAdapter(query, sc);
-
                 dt = new DataTable();
                 da.Fill(dt);
                 dvg.DataSource = dt;
-                CerrarConexion();
             }
             catch (Exception error)
             {
                 MessageBox.Show("No se pudieron cargar los datos: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                CerrarConexion();
             }
-
+            CerrarConexion();
         }
 
         public void EliminarEmpleado(DataGridView dgv)

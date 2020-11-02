@@ -70,7 +70,7 @@ namespace SiguaSportsApp
                 numero1 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider,txtcodigoproducto))
+            if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtcodigoproducto))
                     ErrorProvider.SetError(txtcodigoproducto, "No se puede dejar en blanco.");
@@ -150,8 +150,88 @@ namespace SiguaSportsApp
             {
                 letra5 = true;
             }
+        }
 
+        bool letra6 = false;
+        bool letra7 = false;
+        bool direccion = false;
+        bool letra9 = false;
+        bool correo = false;
+        bool numero6 = false;
 
+        public void validarProveedor()
+        {
+            if (validacion.Espacio_Blanco(ErrorProvider, txtCodProveedor))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtCodProveedor))
+                    ErrorProvider.SetError(txtCodProveedor, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtCodProveedor))
+                    ErrorProvider.SetError(txtCodProveedor, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra6 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtNombreProveedor))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtNombreProveedor))
+                    ErrorProvider.SetError(txtNombreProveedor, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Letras(ErrorProvider, txtNombreProveedor))
+                    ErrorProvider.SetError(txtNombreProveedor, "Solo se permiten letras.");
+            }
+            else
+            {
+                letra7 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtDireccionProveedor))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtDireccionProveedor))
+                    ErrorProvider.SetError(txtDireccionProveedor, "No se puede dejar en blanco.");
+            }
+            else
+            {
+                direccion = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtCorreoProveedor))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtCorreoProveedor))
+                    ErrorProvider.SetError(txtCorreoProveedor, "No se puede dejar en blanco.");
+            }
+            else
+            {
+                correo = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtTelefonoContacto))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtTelefonoContacto))
+                    ErrorProvider.SetError(txtTelefonoContacto, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtTelefonoContacto))
+                    ErrorProvider.SetError(txtTelefonoContacto, "Solo se permiten numeros.");
+            }
+            else
+            {
+                numero6 = true;
+            }
+
+            if (validacion.Espacio_Blanco(ErrorProvider, txtNombreContacto))
+            {
+                if (validacion.Espacio_Blanco(ErrorProvider, txtTelefonoContacto))
+                    ErrorProvider.SetError(txtTelefonoContacto, "No se puede dejar en blanco.");
+                else
+                if (validacion.Solo_Numeros(ErrorProvider, txtTelefonoContacto))
+                    ErrorProvider.SetError(txtTelefonoContacto, "Solo se permiten numeros.");
+            }
+            else
+            {
+                letra9 = true;
+            }
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -193,11 +273,6 @@ namespace SiguaSportsApp
         }
 
         private void lblNombreContacto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -248,6 +323,15 @@ namespace SiguaSportsApp
         private void btnRegistro_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ya se encuentra en la ventana.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            validarProveedor();
+            if (letra6 && letra7 && direccion && letra9 && correo && numero6)
+            {
+
+            }
         }
     }
 }
