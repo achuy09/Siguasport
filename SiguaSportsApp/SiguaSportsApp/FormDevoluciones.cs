@@ -22,7 +22,7 @@ namespace SiguaSportsApp
         ClassDatosTablas conexion = new ClassDatosTablas();
         string query = "SELECT B.nombre[Producto] , A.cantidad[Cantidad] , A.motivo[Motivo] ,C.fecha_devolucion[Fecha de Devolución]" +
                                          "FROM DevolucionDetalle A " +
-                                         "INNER JOIN Productos B ON A.cod_producto = B.cod_producto" +
+                                         "INNER JOIN Productos B ON A.cod_producto = B.cod_producto " +
                                          "INNER JOIN Devoluciones C ON A.num_devolucion = C.num_devolucion where cod_estado = 1";
 
         private void FromDevoluciones_Load(object sender, EventArgs e)
@@ -68,6 +68,14 @@ namespace SiguaSportsApp
                 this.Close();
             }
             conexion.CerrarConexion();
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVentas vent = new FormVentas();
+            vent.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -67,15 +67,15 @@ namespace SiguaSportsApp
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCorreoProveedor = new System.Windows.Forms.TextBox();
             this.lblCorreoProveedor = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefonoProveedor = new System.Windows.Forms.TextBox();
             this.lblTelefonoProveedor = new System.Windows.Forms.Label();
             this.txtTelefonoContacto = new System.Windows.Forms.TextBox();
             this.lblTelefonoContacto = new System.Windows.Forms.Label();
             this.txtDireccionProveedor = new System.Windows.Forms.TextBox();
             this.lblDireccionProveedor = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCodProveedor = new System.Windows.Forms.TextBox();
             this.lblCodProveedor = new System.Windows.Forms.Label();
             this.txtNombreContacto = new System.Windows.Forms.TextBox();
             this.lblNombreContacto = new System.Windows.Forms.Label();
@@ -217,7 +217,7 @@ namespace SiguaSportsApp
             this.tpProductos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpProductos.Name = "tpProductos";
             this.tpProductos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpProductos.Size = new System.Drawing.Size(1309, 511);
+            this.tpProductos.Size = new System.Drawing.Size(1312, 511);
             this.tpProductos.TabIndex = 0;
             this.tpProductos.Text = "Productos";
             this.tpProductos.UseVisualStyleBackColor = true;
@@ -504,15 +504,15 @@ namespace SiguaSportsApp
             this.tpProveedores.Controls.Add(this.btnCancelar);
             this.tpProveedores.Controls.Add(this.btnAgregarProveedor);
             this.tpProveedores.Controls.Add(this.dgvProveedores);
-            this.tpProveedores.Controls.Add(this.textBox2);
+            this.tpProveedores.Controls.Add(this.txtCorreoProveedor);
             this.tpProveedores.Controls.Add(this.lblCorreoProveedor);
-            this.tpProveedores.Controls.Add(this.textBox3);
+            this.tpProveedores.Controls.Add(this.txtTelefonoProveedor);
             this.tpProveedores.Controls.Add(this.lblTelefonoProveedor);
             this.tpProveedores.Controls.Add(this.txtTelefonoContacto);
             this.tpProveedores.Controls.Add(this.lblTelefonoContacto);
             this.tpProveedores.Controls.Add(this.txtDireccionProveedor);
             this.tpProveedores.Controls.Add(this.lblDireccionProveedor);
-            this.tpProveedores.Controls.Add(this.textBox6);
+            this.tpProveedores.Controls.Add(this.txtCodProveedor);
             this.tpProveedores.Controls.Add(this.lblCodProveedor);
             this.tpProveedores.Controls.Add(this.txtNombreContacto);
             this.tpProveedores.Controls.Add(this.lblNombreContacto);
@@ -549,7 +549,7 @@ namespace SiguaSportsApp
             this.btnAgregarProveedor.TabIndex = 68;
             this.btnAgregarProveedor.Text = "Agregar";
             this.btnAgregarProveedor.UseVisualStyleBackColor = true;
-            this.btnAgregarProveedor.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
             // dgvProveedores
             // 
@@ -566,15 +566,15 @@ namespace SiguaSportsApp
             this.dgvProveedores.Size = new System.Drawing.Size(1240, 322);
             this.dgvProveedores.TabIndex = 67;
             // 
-            // textBox2
+            // txtCorreoProveedor
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCorreoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(518, 53);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 22);
-            this.textBox2.TabIndex = 66;
+            this.txtCorreoProveedor.Location = new System.Drawing.Point(518, 53);
+            this.txtCorreoProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreoProveedor.Name = "txtCorreoProveedor";
+            this.txtCorreoProveedor.Size = new System.Drawing.Size(239, 22);
+            this.txtCorreoProveedor.TabIndex = 66;
             // 
             // lblCorreoProveedor
             // 
@@ -582,22 +582,22 @@ namespace SiguaSportsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCorreoProveedor.AutoSize = true;
             this.lblCorreoProveedor.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreoProveedor.Location = new System.Drawing.Point(435, 50);
+            this.lblCorreoProveedor.Location = new System.Drawing.Point(416, 51);
             this.lblCorreoProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCorreoProveedor.Name = "lblCorreoProveedor";
             this.lblCorreoProveedor.Size = new System.Drawing.Size(66, 24);
             this.lblCorreoProveedor.TabIndex = 65;
             this.lblCorreoProveedor.Text = "Correo";
             // 
-            // textBox3
+            // txtTelefonoProveedor
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTelefonoProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(518, 9);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 22);
-            this.textBox3.TabIndex = 64;
+            this.txtTelefonoProveedor.Location = new System.Drawing.Point(518, 9);
+            this.txtTelefonoProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
+            this.txtTelefonoProveedor.Size = new System.Drawing.Size(139, 22);
+            this.txtTelefonoProveedor.TabIndex = 64;
             // 
             // lblTelefonoProveedor
             // 
@@ -662,15 +662,15 @@ namespace SiguaSportsApp
             this.lblDireccionProveedor.TabIndex = 59;
             this.lblDireccionProveedor.Text = "Dirección";
             // 
-            // textBox6
+            // txtCodProveedor
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCodProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(160, 9);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(171, 22);
-            this.textBox6.TabIndex = 58;
+            this.txtCodProveedor.Location = new System.Drawing.Point(160, 9);
+            this.txtCodProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodProveedor.Name = "txtCodProveedor";
+            this.txtCodProveedor.Size = new System.Drawing.Size(171, 22);
+            this.txtCodProveedor.TabIndex = 58;
             // 
             // lblCodProveedor
             // 
@@ -702,7 +702,7 @@ namespace SiguaSportsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreContacto.AutoSize = true;
             this.lblNombreContacto.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreContacto.Location = new System.Drawing.Point(820, 12);
+            this.lblNombreContacto.Location = new System.Drawing.Point(810, 12);
             this.lblNombreContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreContacto.Name = "lblNombreContacto";
             this.lblNombreContacto.Size = new System.Drawing.Size(153, 24);
@@ -805,15 +805,15 @@ namespace SiguaSportsApp
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregarProveedor;
         private System.Windows.Forms.DataGridView dgvProveedores;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCorreoProveedor;
         private System.Windows.Forms.Label lblCorreoProveedor;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefonoProveedor;
         private System.Windows.Forms.Label lblTelefonoProveedor;
         private System.Windows.Forms.TextBox txtTelefonoContacto;
         private System.Windows.Forms.Label lblTelefonoContacto;
         private System.Windows.Forms.TextBox txtDireccionProveedor;
         private System.Windows.Forms.Label lblDireccionProveedor;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCodProveedor;
         private System.Windows.Forms.Label lblCodProveedor;
         private System.Windows.Forms.TextBox txtNombreContacto;
         private System.Windows.Forms.Label lblNombreContacto;

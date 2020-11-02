@@ -36,20 +36,10 @@ namespace SiguaSportsApp
         private void btnAgregarProducto_Click_1(object sender, EventArgs e)
         {
             con.AbrirConexion();
-            con.da = new SqlDataAdapter("select count(*)from Productos where cod_producto = '" + txtBuscar.Text + "'", con.sc);
+            con.da = new SqlDataAdapter("select * from Productos where cod_producto = '" + txtBuscar.Text + "'", con.sc);
             con.dt = new DataTable();
             con.da.Fill(con.dt);
-
-            if (con.dt.Rows[0][0].ToString() == "1")
-            {
-                //MOSTRAR DATOS DEL PRODUCTO
-            }
-            else
-            {
-                MessageBox.Show("Codigo de Producto Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtBuscar.Clear();
-                txtBuscar.Focus();
-            }
+            dgvProductos.DataSource = con.dt;
             con.CerrarConexion();
         }
 
